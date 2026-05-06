@@ -3,9 +3,16 @@ package aks;
     Klassen LibraryItem
  */
 public class LibraryItem {
-    private String id;
-    private String title;
-    private boolean isAvailable;
+    protected String id;
+    protected String title;
+    protected boolean isAvailable;
+
+    // Konstruktor
+    public LibraryItem(String id, String title, boolean isAvailable){
+        this.id = id;
+        this.title = title;
+        this.isAvailable = isAvailable;
+    }
 
     // Getters
     public String getId() {return id;}
@@ -13,5 +20,4 @@ public class LibraryItem {
     public String getTitle() {return title;}
 
     public boolean isAvailable() {return isAvailable;}
-
 }
