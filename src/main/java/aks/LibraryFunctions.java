@@ -11,7 +11,6 @@ import kong.unirest.Unirest;
 import kong.unirest.UnirestException;
 import kong.unirest.HttpResponse;
 
-
 /* Alexander Karppi Säterö 
 Klassen sköter programmets funktioner */
 
@@ -51,10 +50,41 @@ public class LibraryFunctions {
         String responsBody = response.getBody();
 
         // Konvertera json till ArrayList med Book objekt
-        Type bookType = new TypeToken<ArrayList<Book>>(){}.getType();
+        Type bookType = new TypeToken<ArrayList<Book>>() {
+        }.getType();
         books = gson.fromJson(responsBody, bookType);
 
         IO.println("Antal böcker hämtade: " + books.size());
+        return true;
+    }
+
+    // Hämta tidningar
+    public boolean getMagazine() {
+        // Testa att hämta tidningar
+        try {
+            response = Unirest.get(baseUrl + "magazines").asString();
+        } catch (UnirestException e) {
+            // Felmeddelande
+            IO.println("Undantag uppkoppling: " + e.getLocalizedMessage());
+            return false;
+        }
+        // Hämta status
+        status = response.getStatus();
+        // Kolla ifall status är ok
+        if (status != 200) {
+            IO.println("Fel från server, statuskod: " + status);
+            return false;
+        }
+
+        // Hämta informationen i body
+        String responsBody = response.getBody();
+
+        // Konvertera json till ArrayList med Magazine objekt
+        Type magazineType = new TypeToken<ArrayList<Magazine>>() {
+        }.getType();
+        magazines = gson.fromJson(responsBody, magazineType);
+
+        IO.println("Antal böcker hämtade: " + magazines.size());
         return true;
     }
 }

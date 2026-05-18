@@ -23,9 +23,8 @@ public class Main {
                         bibliotek.getBooks();
                         break;
                     case "2":
-                        
+                        bibliotek.getMagazine();
                         break;
-                
                     case "3":
                         
                         break;
