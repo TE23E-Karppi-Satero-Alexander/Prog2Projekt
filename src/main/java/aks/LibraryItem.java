@@ -20,4 +20,6 @@ public class LibraryItem {
     public String getTitle() {return title;}
 
     public boolean isAvailable() {return isAvailable;}
+
+    public String getInfo() {return "ID: " + id + "Titel: " + title + "Tillgänlighet: " + isAvailable;}
 }
