@@ -95,9 +95,23 @@ public class LibraryFunctions {
         String genre = IO.readln("Ange genre: ");
         int pages = Integer.parseInt(IO.readln("Ange antal sidor: "));
 
-        // Skapa ny bok
+        // Skapa ny bok och lägg till i lista
         Book bookToAdd = new Book(id, title, true, author, genre, pages);
         books.add(bookToAdd);
         IO.println("Boken " + title + " har skapats");
+    }
+    // Lägg till ny tidning till lista
+    public void addMagazine(){
+        // Användaren bestämmer nya tidningen
+        String id = String.valueOf(magazines.size()+1);
+        String title = IO.readln("Ange titel: ");
+        int issueNumber = Integer.parseInt(IO.readln("Ange utgåva: "));
+        String category = IO.readln("Ange kategori: ");
+        int publishedYear = Integer.parseInt(IO.readln("Ange publiceringsår: "));
+
+        // Skapa ny tidning och lägg till i lista
+        Magazine magazineToAdd = new Magazine(id, title, true, issueNumber, category, publishedYear);
+        magazines.add(magazineToAdd);
+        IO.println("Tidningen " + title + " har skapats");
     }
 }

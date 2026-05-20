@@ -34,7 +34,7 @@ public class Main {
                         break;
                 
                     case "5":
-                        
+                        bibliotek.addMagazine();
                         break;
                 
                     default:
