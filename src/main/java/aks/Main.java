@@ -30,7 +30,7 @@ public class Main {
                         break;
                 
                     case "4":
-                        
+                        bibliotek.addBook();
                         break;
                 
                     case "5":

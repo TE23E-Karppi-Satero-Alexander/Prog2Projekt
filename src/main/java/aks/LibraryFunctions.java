@@ -50,8 +50,7 @@ public class LibraryFunctions {
         String responsBody = response.getBody();
 
         // Konvertera json till ArrayList med Book objekt
-        Type bookType = new TypeToken<ArrayList<Book>>() {
-        }.getType();
+        Type bookType = new TypeToken<ArrayList<Book>>() {}.getType();
         books = gson.fromJson(responsBody, bookType);
 
         IO.println("Antal böcker hämtade: " + books.size());
@@ -80,11 +79,25 @@ public class LibraryFunctions {
         String responsBody = response.getBody();
 
         // Konvertera json till ArrayList med Magazine objekt
-        Type magazineType = new TypeToken<ArrayList<Magazine>>() {
-        }.getType();
+        Type magazineType = new TypeToken<ArrayList<Magazine>>() {}.getType();
         magazines = gson.fromJson(responsBody, magazineType);
 
-        IO.println("Antal böcker hämtade: " + magazines.size());
+        IO.println("Antal tidningar hämtade: " + magazines.size());
         return true;
+    }
+
+    // Lägg till ny bok till lista
+    public void addBook(){
+        // Användaren bestämmer nya boken
+        String id = String.valueOf(books.size()+1);
+        String title = IO.readln("Ange titel: ");
+        String author = IO.readln("Ange författare: ");
+        String genre = IO.readln("Ange genre: ");
+        int pages = Integer.parseInt(IO.readln("Ange antal sidor: "));
+
+        // Skapa ny bok
+        Book bookToAdd = new Book(id, title, true, author, genre, pages);
+        books.add(bookToAdd);
+        IO.println("Boken " + title + " har skapats");
     }
 }
