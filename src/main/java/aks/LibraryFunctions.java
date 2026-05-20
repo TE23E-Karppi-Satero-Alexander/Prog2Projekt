@@ -12,7 +12,7 @@ import kong.unirest.UnirestException;
 import kong.unirest.HttpResponse;
 
 /* Alexander Karppi Säterö 
-Klassen sköter programmets funktioner */
+Klassen sköter programmets funktionalitet */
 
 public class LibraryFunctions {
     private List<Book> books = new ArrayList<>();
@@ -47,11 +47,11 @@ public class LibraryFunctions {
         }
 
         // Hämta informationen i body
-        String responsBody = response.getBody();
+        String responseBody = response.getBody();
 
         // Konvertera json till ArrayList med Book objekt
         Type bookType = new TypeToken<ArrayList<Book>>() {}.getType();
-        books = gson.fromJson(responsBody, bookType);
+        books = gson.fromJson(responseBody, bookType);
 
         IO.println("Antal böcker hämtade: " + books.size());
         return true;
@@ -76,11 +76,11 @@ public class LibraryFunctions {
         }
 
         // Hämta informationen i body
-        String responsBody = response.getBody();
+        String responseBody = response.getBody();
 
         // Konvertera json till ArrayList med Magazine objekt
         Type magazineType = new TypeToken<ArrayList<Magazine>>() {}.getType();
-        magazines = gson.fromJson(responsBody, magazineType);
+        magazines = gson.fromJson(responseBody, magazineType);
 
         IO.println("Antal tidningar hämtade: " + magazines.size());
         return true;
