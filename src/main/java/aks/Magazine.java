@@ -23,5 +23,5 @@ public class Magazine extends LibraryItem{
     public int publishedYear() {return publishedYear;}
 
     @Override
-    public String getInfo() {return "ID: " + id + "Titel: " + title + "Tillgänlighet: " + isAvailable + "Utgåva: " + issueNumber + "Kategori: " + category + "Publiceringsår: " + publishedYear;}
+    public String getInfo() {return "ID: " + id + " Titel: " + title + " Tillgänlighet: " + isAvailable + " Utgåva: " + issueNumber + " Kategori: " + category + " Publiceringsår: " + publishedYear;}
 }

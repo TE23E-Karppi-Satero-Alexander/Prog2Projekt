@@ -21,5 +21,5 @@ public class LibraryItem {
 
     public boolean isAvailable() {return isAvailable;}
 
-    public String getInfo() {return "ID: " + id + "Titel: " + title + "Tillgänlighet: " + isAvailable;}
+    public String getInfo() {return "ID: " + id + " Titel: " + title + " Tillgänlighet: " + isAvailable;}
 }

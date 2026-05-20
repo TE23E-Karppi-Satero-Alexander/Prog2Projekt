@@ -23,5 +23,5 @@ public class Book extends LibraryItem{
     public int getPages(){return pages;}
 
     @Override
-    public String getInfo() {return "ID: " + id + "Titel: " + title + "Tillgänlighet: " + isAvailable + "Författare: " + author + "Genre: " + genre + "Antal sidor: " + pages;}
+    public String getInfo() {return "ID: " + id + " Titel: " + title + " Tillgänlighet: " + isAvailable + " Författare: " + author + " Genre: " + genre + " Antal sidor: " + pages;}
 }

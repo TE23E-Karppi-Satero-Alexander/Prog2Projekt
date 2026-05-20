@@ -100,6 +100,7 @@ public class LibraryFunctions {
         books.add(bookToAdd);
         IO.println("Boken " + title + " har skapats");
     }
+
     // Lägg till ny tidning till lista
     public void addMagazine(){
         // Användaren bestämmer nya tidningen
@@ -113,5 +114,19 @@ public class LibraryFunctions {
         Magazine magazineToAdd = new Magazine(id, title, true, issueNumber, category, publishedYear);
         magazines.add(magazineToAdd);
         IO.println("Tidningen " + title + " har skapats");
+    }
+
+    // Skriv ut alla böcker
+    public void printBooks(){
+        for (Book book : books) {
+            IO.println(book.getInfo());
+        }
+    }
+
+    // Skriv ut alla tidningar
+    public void printMagazines(){
+        for (Magazine magazine : magazines) {
+            IO.println(magazine.getInfo());
+        }
     }
 }

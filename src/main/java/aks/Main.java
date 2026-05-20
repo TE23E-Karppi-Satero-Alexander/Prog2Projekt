@@ -26,7 +26,18 @@ public class Main {
                         bibliotek.getMagazine();
                         break;
                     case "3":
-                        
+                        String alternativ = IO.readln("Skriv ut hämtade böcker eller tidningar (1/2): ");
+                        switch (alternativ) {
+                            case "1":
+                                bibliotek.printBooks();
+                                break;
+                            case "2":
+                                bibliotek.printMagazines();
+                                break;
+                            default:
+                                IO.println("\nOgiltigt alternativ");
+                                break;
+                        }
                         break;
                 
                     case "4":
